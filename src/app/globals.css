@@ -1,48 +1,57 @@
 @import 'tailwindcss';
 
 :root {
-  /* Khadeeja Portfolio Color Palette - Inspired by portrait colors */
-  --background: 0 0% 8%; /* #141414 - Deep charcoal background */
-  --foreground: 0 0% 100%; /* #FFFFFF - White text */
-  --muted: 0 0% 12%; /* Slightly lighter dark */
-  --muted-foreground: 0 0% 75%; /* #BFBFBF - Light gray text */
-  --border: 0 0% 18%; /* Dark borders */
-  --primary: 180 45% 35%; /* #2D5A5A - Dark teal from sweater */
-  --primary-foreground: 0 0% 100%; /* White on teal */
-  --secondary: 0 0% 12%; /* Dark secondary */
-  --secondary-foreground: 0 0% 100%; /* White on secondary */
-  --accent: 180 60% 65%; /* #4DD0D0 - Light blue-green accent */
-  --accent-foreground: 0 0% 10%; /* Dark text on light accent */
+  /* Mashal Portfolio — warm cream + rose-pink accent (light theme) */
+  --background: 30 40% 97%;          /* warm cream #FAF7F4 */
+  --foreground: 0 0% 10%;            /* near-black #1A1A1A */
+  --muted: 30 25% 93%;               /* slightly darker cream */
+  --muted-foreground: 0 0% 44%;      /* medium gray */
+  --border: 30 15% 86%;              /* warm light border */
+  --primary: 335 65% 52%;            /* rose-pink */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 30 20% 93%;
+  --secondary-foreground: 0 0% 10%;
+  --accent: 335 65% 52%;             /* rose-pink accent (matches primary) */
+  --accent-foreground: 0 0% 100%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
-  --ring: 180 45% 35%; /* Teal ring */
+  --ring: 335 65% 52%;
 
-  /* Custom colors for the design */
-  --warm-beige: 30 25% 88%; /* #E0D4C0 - Lighter warm beige from portrait background */
-  --teal-dark: 180 50% 20%; /* #1A3A3A - Darker teal variant */
-  --teal-light: 180 65% 80%; /* #8FE8E8 - Lighter teal variant */
-  --teal-medium: 180 45% 40%; /* #3A6A6A - Medium teal */
-  --card-bg: 0 0% 8%; /* Card background */
-  --testimonial-teal: 180 45% 35%; /* Teal testimonial */
-  --testimonial-accent: 180 60% 65%; /* Light teal testimonial */
-  --gold-accent: 45 85% 65%; /* #E6B800 - Gold accent for highlights */
+  /* Custom palette — remapped from teal to rose-pink */
+  --warm-beige: 30 40% 95%;
+  --teal-dark: 335 60% 32%;          /* deep rose */
+  --teal-light: 335 55% 78%;         /* light rose */
+  --teal-medium: 335 62% 48%;        /* medium rose */
+  --card-bg: 0 0% 100%;              /* pure white cards on cream bg */
+  --testimonial-teal: 335 65% 52%;
+  --testimonial-accent: 335 55% 72%;
+  --gold-accent: 335 50% 68%;        /* light rose (replaces gold) */
 }
 
 .dark {
-  --background: 0 0% 8%; /* #141414 - Deep charcoal background */
-  --foreground: 0 0% 100%; /* #FFFFFF - White text */
-  --muted: 0 0% 12%; /* Slightly lighter dark */
-  --muted-foreground: 0 0% 75%; /* #BFBFBF - Light gray text */
-  --border: 0 0% 18%; /* Dark borders */
-  --primary: 180 45% 35%; /* #2D5A5A - Dark teal from sweater */
-  --primary-foreground: 0 0% 100%; /* White on teal */
-  --secondary: 0 0% 12%; /* Dark secondary */
-  --secondary-foreground: 0 0% 100%; /* White on secondary */
-  --accent: 180 60% 65%; /* #4DD0D0 - Light blue-green accent */
-  --accent-foreground: 0 0% 10%; /* Dark text on light accent */
+  /* Dark mode — dark background with rose-pink accent */
+  --background: 0 0% 8%;
+  --foreground: 0 0% 100%;
+  --muted: 0 0% 12%;
+  --muted-foreground: 0 0% 72%;
+  --border: 0 0% 18%;
+  --primary: 335 68% 62%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 12%;
+  --secondary-foreground: 0 0% 100%;
+  --accent: 335 68% 62%;
+  --accent-foreground: 0 0% 100%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
-  --ring: 180 45% 35%; /* Teal ring */
+  --ring: 335 68% 62%;
+  --warm-beige: 0 0% 14%;
+  --teal-dark: 335 55% 30%;
+  --teal-light: 335 60% 72%;
+  --teal-medium: 335 62% 50%;
+  --card-bg: 0 0% 10%;
+  --testimonial-teal: 335 68% 62%;
+  --testimonial-accent: 335 60% 72%;
+  --gold-accent: 335 55% 68%;
 }
 
 * {
@@ -84,132 +93,6 @@ html {
 ::selection {
   background-color: hsl(var(--primary) / 0.2);
   color: hsl(var(--foreground));
-}
-
-/* Custom Cursor Styles */
-* {
-  cursor: none !important;
-}
-
-.custom-cursor-dot {
-  position: fixed;
-  width: 4px;
-  height: 4px;
-  background: hsl(var(--accent));
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  mix-blend-mode: difference;
-}
-
-.custom-cursor-ring {
-  position: fixed;
-  width: 20px;
-  height: 20px;
-  border: 1px solid hsl(var(--accent));
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9998;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  mix-blend-mode: difference;
-}
-
-.custom-cursor-trail {
-  position: fixed;
-  width: 10px;
-  height: 10px;
-  background: hsl(var(--accent) / 0.3);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9997;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  mix-blend-mode: difference;
-}
-
-/* Cursor States */
-.custom-cursor-dot.clicking {
-  background: hsl(var(--primary));
-  transform: translate(-50%, -50%) scale(0.7) !important;
-}
-
-.custom-cursor-ring.clicking {
-  border-color: hsl(var(--primary));
-  transform: translate(-50%, -50%) scale(1.2) !important;
-}
-
-/* Link cursor */
-.custom-cursor-dot.link {
-  background: hsl(var(--accent));
-  transform: translate(-50%, -50%) scale(1.2);
-}
-
-.custom-cursor-ring.link {
-  border-color: hsl(var(--accent));
-  border-width: 3px;
-  transform: translate(-50%, -50%) scale(1.5);
-}
-
-/* Button cursor */
-.custom-cursor-dot.button {
-  background: hsl(var(--primary));
-  transform: translate(-50%, -50%) scale(1.3);
-}
-
-.custom-cursor-ring.button {
-  border-color: hsl(var(--primary));
-  border-width: 3px;
-  transform: translate(-50%, -50%) scale(2);
-}
-
-/* Interactive element cursor */
-.custom-cursor-dot.interactive {
-  background: hsl(var(--accent));
-  transform: translate(-50%, -50%) scale(1.1);
-}
-
-.custom-cursor-ring.interactive {
-  border-color: hsl(var(--accent));
-  transform: translate(-50%, -50%) scale(2.2);
-}
-
-/* Text cursor */
-.custom-cursor-dot.text {
-  background: hsl(var(--foreground));
-  transform: translate(-50%, -50%) scale(0.8);
-}
-
-.custom-cursor-ring.text {
-  border-color: hsl(var(--foreground));
-  transform: translate(-50%, -50%) scale(1.8);
-}
-
-/* Cursor animations */
-@keyframes cursorPulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.7;
-  }
-}
-
-.custom-cursor-dot:hover {
-  animation: cursorPulse 2s ease-in-out infinite;
-}
-
-/* Hide cursor on touch devices */
-@media (hover: none) and (pointer: coarse) {
-  * {
-    cursor: auto !important;
-  }
-
-  .custom-cursor-dot,
-  .custom-cursor-ring,
-  .custom-cursor-trail {
-    display: none;
-  }
 }
 
 /* Focus styles */
@@ -552,7 +435,6 @@ html {
   border: 1px solid hsl(var(--border) / 0.5);
 }
 
-/* Khadeeja Hero Section Styles */
 .hero-portrait-frame {
   position: relative;
   width: 420px;
@@ -605,8 +487,10 @@ html {
 .hero-title {
   font-size: clamp(4rem, 9vw, 7rem);
   font-weight: 900;
-  line-height: 0.85;
+  line-height: 1.05;
   letter-spacing: -0.03em;
+  padding-bottom: 0.08em;
+  overflow: visible;
   color: hsl(var(--foreground));
   text-transform: uppercase;
   font-family: 'Inter', system-ui, sans-serif;
@@ -1372,7 +1256,8 @@ html {
 
   .hero-title {
     font-size: clamp(2.5rem, 8vw, 4rem) !important;
-    line-height: 1.1 !important;
+    line-height: 1.15 !important;
+    padding-bottom: 0.1em !important;
   }
 
   .hero-subtitle {
@@ -1442,63 +1327,6 @@ html {
   background: hsl(var(--border) / 0.2);
   z-index: 9999;
   transform-origin: left;
-}
-
-.scroll-progress-bar::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 4px;
-  height: 100%;
-  background: hsl(var(--accent));
-  border-radius: 2px;
-  box-shadow: 0 0 8px hsl(var(--accent) / 0.6);
-}
-
-/* Scroll Icon Animation */
-.scroll-icon {
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 16px;
-  height: 16px;
-  background: hsl(var(--accent));
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 12px hsl(var(--accent) / 0.6),
-    0 0 24px hsl(var(--accent) / 0.3), 0 0 0 2px hsl(var(--background));
-  transition: all 0.3s ease;
-}
-
-.scroll-icon:hover {
-  transform: translate(-50%, -50%) scale(1.2);
-  box-shadow: 0 0 16px hsl(var(--accent) / 0.8),
-    0 0 32px hsl(var(--accent) / 0.4), 0 0 0 2px hsl(var(--background));
-}
-
-.scroll-icon svg {
-  color: white;
-  transition: transform 0.3s ease;
-}
-
-/* Pulse animation for scroll icon */
-@keyframes scrollIconPulse {
-  0%,
-  100% {
-    box-shadow: 0 0 12px hsl(var(--accent) / 0.6),
-      0 0 24px hsl(var(--accent) / 0.3), 0 0 0 2px hsl(var(--background));
-  }
-  50% {
-    box-shadow: 0 0 16px hsl(var(--accent) / 0.8),
-      0 0 32px hsl(var(--accent) / 0.5), 0 0 0 2px hsl(var(--background));
-  }
-}
-
-.scroll-icon {
-  animation: scrollIconPulse 2s ease-in-out infinite;
 }
 
 @media (max-width: 480px) {
@@ -2099,4 +1927,287 @@ html {
   .terminal-content {
     padding: 1rem;
   }
+}
+
+/* ─── Navigation: boxed initials logo ─────────────────────────────────────── */
+
+.logo-initials-box {
+  width: 40px;
+  height: 40px;
+  border: 2px solid hsl(var(--accent));
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+  background: transparent;
+}
+
+.logo-initials-box:hover {
+  border-color: hsl(var(--accent));
+  color: hsl(var(--accent));
+}
+
+.minimal-nav-link {
+  font-size: 0.9rem;
+  font-weight: 400;
+  transition: color 0.2s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.minimal-nav-link:hover {
+  color: hsl(var(--foreground)) !important;
+}
+
+.minimal-nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: hsl(var(--muted-foreground));
+  transition: color 0.2s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.minimal-nav-icon:hover {
+  color: hsl(var(--foreground));
+}
+
+/* ─── Hero section ──────────────────────────────────────────────────────────── */
+
+.hero-main-title {
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  color: hsl(var(--foreground));
+  margin-bottom: 1.25rem;
+}
+
+.hero-main-description {
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: hsl(var(--muted-foreground));
+  max-width: 440px;
+}
+
+.hero-social-abbr {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: hsl(var(--foreground));
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.hero-social-abbr:hover {
+  color: hsl(var(--accent));
+}
+
+/* ─── Circular portrait with dashed pink ring ───────────────────────────────── */
+
+.portrait-dashed-ring {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  border: 3px dashed hsl(var(--accent));
+  padding: 10px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.portrait-image-clip {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .portrait-dashed-ring {
+    width: 240px;
+    height: 240px;
+    padding: 8px;
+  }
+
+  .hero-main-title {
+    font-size: clamp(2rem, 7vw, 2.75rem);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════ */
+/* HIGH-END ANIMATION ADDITIONS — 2025 Portfolio Polish                        */
+/* ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Glass nav (applied dynamically when page is scrolled) ─────────────── */
+.nav-glass {
+  background-color: hsl(var(--background) / 0.88) !important;
+  backdrop-filter: blur(20px) saturate(1.5);
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  box-shadow: 0 1px 0 hsl(var(--border) / 0.5),
+              0 4px 28px hsl(var(--accent) / 0.05);
+}
+
+/* ── Section indicator tag (replaces broken bg-hsl classes in SectionHeader) */
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  border-radius: 100px;
+  border: 1px solid hsl(var(--accent) / 0.3);
+  background: hsl(var(--accent) / 0.07);
+  margin-bottom: 1.25rem;
+}
+
+.section-tag-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: hsl(var(--accent));
+  animation: section-dot-pulse 2.4s ease-out infinite;
+}
+
+.section-tag-text {
+  font-family: ui-monospace, 'SF Mono', 'Roboto Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: hsl(var(--accent));
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+@keyframes section-dot-pulse {
+  0%, 100% { opacity: 1;   transform: scale(1);   }
+  50%       { opacity: 0.4; transform: scale(0.75); }
+}
+
+/* ── Hero stats row ─────────────────────────────────────────────────────── */
+.hero-stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+  color: hsl(var(--accent));
+}
+
+.hero-stat-label {
+  font-family: ui-monospace, 'SF Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.09em;
+  color: hsl(var(--muted-foreground));
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+/* ── CTA shimmer button ─────────────────────────────────────────────────── */
+@keyframes cta-shimmer {
+  0%   { background-position:  200% center; }
+  100% { background-position: -200% center; }
+}
+
+.cta-shimmer {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--accent))        0%,
+    hsl(var(--accent) / 0.6) 30%,
+    hsl(var(--accent))        55%,
+    hsl(var(--accent) / 0.6) 80%,
+    hsl(var(--accent))       100%
+  );
+  background-size: 200% auto;
+  animation: cta-shimmer 2.8s linear infinite;
+  color: #fff;
+  border: none !important;
+}
+
+/* ── Contact icon pulse ring ────────────────────────────────────────────── */
+@keyframes icon-ring-pulse {
+  0%   { transform: scale(1);   opacity: 0.55; }
+  80%  { transform: scale(2.1); opacity: 0;    }
+  100% { transform: scale(2.1); opacity: 0;    }
+}
+
+.icon-pulse-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-pulse-wrap::after {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 1.5px solid hsl(var(--accent));
+  animation: icon-ring-pulse 2.3s ease-out infinite;
+  pointer-events: none;
+}
+
+/* ── Floating background orb (reusable) ─────────────────────────────────── */
+@keyframes orb-drift {
+  0%, 100% { transform: translateY(0px)  translateX(0px);  }
+  33%       { transform: translateY(-22px) translateX(12px); }
+  66%       { transform: translateY(10px)  translateX(-8px); }
+}
+
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(48px);
+  pointer-events: none;
+  animation: orb-drift 10s ease-in-out infinite;
+}
+
+/* ── Expertise card corner accent (fixed from broken Tailwind class) ─────── */
+.card-corner-accent {
+  position: absolute;
+  top: 0; right: 0;
+  width: 28px; height: 28px;
+  border-top: 2px solid hsl(var(--accent));
+  border-right: 2px solid hsl(var(--accent));
+  opacity: 0.2;
+  transition: opacity 0.3s ease;
+  border-radius: 0 12px 0 0;
+}
+
+.expertise-card:hover .card-corner-accent {
+  opacity: 0.5;
+}
+
+/* ── Footer border fix ──────────────────────────────────────────────────── */
+.footer-border {
+  border-top: 1px solid hsl(var(--border) / 0.4);
+}
+
+/* ── Stagger list items ─────────────────────────────────────────────────── */
+@keyframes stagger-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0);     }
+}
+
+/* ── Contact card gradient border on hover ──────────────────────────────── */
+.contact-card {
+  background: hsl(var(--card-bg));
+  border: 1px solid hsl(var(--border));
+  border-radius: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.contact-card:hover {
+  border-color: hsl(var(--accent) / 0.5);
+  box-shadow: 0 12px 40px hsl(var(--accent) / 0.1);
+  transform: translateY(-3px);
 }

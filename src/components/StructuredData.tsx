@@ -1,15 +1,15 @@
-import { CONTACT_INFO } from '@/constants';
+import { CONTACT_INFO, SITE_URL } from '@/constants';
 
 export const StructuredData = () => {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'Khadeejah Asif',
+    name: 'Mashal Maqsood',
     jobTitle: 'Full Stack Developer',
     description:
       'Full Stack Developer skilled in React.js, Next.js, TypeScript, Node.js, and MongoDB. Building responsive, high-performance web applications.',
-    url: 'https://khadeeja-portfolio.vercel.app',
-    image: 'https://khadeeja-portfolio.vercel.app/me.jpeg',
+    url: SITE_URL,
+    image: `${SITE_URL}/me.jpeg`,
     sameAs: [CONTACT_INFO.linkedin, CONTACT_INFO.github],
     address: {
       '@type': 'PostalAddress',
@@ -24,10 +24,12 @@ export const StructuredData = () => {
       'TypeScript',
       'Node.js',
       'MongoDB',
+      'FastAPI',
+      'Express.js',
+      'GraphQL',
+      'REST APIs',
       'JavaScript',
       'Web Development',
-      'Frontend Development',
-      'Backend Development',
     ],
     hasOccupation: {
       '@type': 'Occupation',

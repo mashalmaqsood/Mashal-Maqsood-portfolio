@@ -27,20 +27,21 @@ export const SectionHeader = ({
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.6, delay: 0.2 }}
-      className={`${className}`}
+      className={className}
     >
+      {/* Indicator tag — uses proper inline styles (avoids broken bg-hsl Tailwind) */}
       {indicator && (
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex items-center justify-center gap-2 mb-4"
+          initial={{ opacity: 0, y: 8 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 8 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="flex items-center justify-center"
         >
-          <div className="w-2 h-2 rounded-full bg-hsl(var(--accent))"></div>
-          <span className="font-mono text-xs text-hsl(var(--accent)) tracking-wider">
-            {indicator}
-          </span>
-          <div className="w-2 h-2 rounded-full bg-hsl(var(--accent))"></div>
+          <div className="section-tag">
+            <span className="section-tag-dot" />
+            <span className="section-tag-text">{indicator}</span>
+            <span className="section-tag-dot" />
+          </div>
         </motion.div>
       )}
 
@@ -53,8 +54,8 @@ export const SectionHeader = ({
 
       {subtitle && (
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-base sm:text-lg max-w-2xl mx-auto px-4"
           style={{ color: 'hsl(var(--muted-foreground))' }}
@@ -65,8 +66,8 @@ export const SectionHeader = ({
 
       {description && (
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-base sm:text-lg max-w-2xl mx-auto px-4"
           style={{ color: 'hsl(var(--muted-foreground))' }}

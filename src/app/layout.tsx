@@ -3,8 +3,8 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import Navigation from '@/components/navigation';
-import CustomCursor from '@/components/custom-cursor';
 import { StructuredData } from '@/components/StructuredData';
+import { SITE_URL } from '@/constants';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -12,8 +12,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://khadeeja-portfolio.vercel.app'),
-  title: 'Maryam Ali - Full Stack Developer',
+  metadataBase: new URL(SITE_URL),
+  title: 'Mashal Maqsood - Full Stack Developer',
   description:
     'Full Stack Developer skilled in React.js, Next.js, TypeScript, Node.js, and MongoDB. Building responsive, high-performance web applications.',
   keywords: [
@@ -31,33 +31,33 @@ export const metadata: Metadata = {
     'Lahore',
     'Pakistan',
   ],
-  authors: [{ name: 'Khadeejah Asif' }],
-  creator: 'Khadeejah Asif',
-  publisher: 'Khadeejah Asif',
+  authors: [{ name: 'Mashal Maqsood' }],
+  creator: 'Mashal Maqsood',
+  publisher: 'Mashal Maqsood',
   robots: 'index, follow',
   alternates: {
-    canonical: 'https://khadeeja-portfolio.vercel.app',
+    canonical: SITE_URL,
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://khadeeja-portfolio.vercel.app',
-    title: 'Khadeejah Asif - Full Stack Developer',
+    url: SITE_URL,
+    title: 'Mashal Maqsood - Full Stack Developer',
     description:
       'Full Stack Developer skilled in React.js, Next.js, TypeScript, Node.js, and MongoDB. Building responsive, high-performance web applications.',
-    siteName: 'Khadeejah Asif Portfolio',
+    siteName: 'Mashal Maqsood Portfolio',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Khadeejah Asif - Full Stack Developer',
+        alt: 'Mashal Maqsood - Full Stack Developer',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Khadeejah Asif - Full Stack Developer',
+    title: 'Mashal Maqsood - Full Stack Developer',
     description:
       'Full Stack Developer skilled in React.js, Next.js, TypeScript, Node.js, and MongoDB.',
     images: ['/og-image.jpg'],
@@ -93,11 +93,10 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
-          <CustomCursor />
           <Navigation />
           <main role="main">{children}</main>
         </ThemeProvider>
