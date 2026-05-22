@@ -1,4 +1,4 @@
-# Maryam Ali - Portfolio Website
+# Mashal Maqsood - Portfolio Website
 
 Personal portfolio website for Maryam Ali, built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.
 
