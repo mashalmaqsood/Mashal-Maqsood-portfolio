@@ -277,14 +277,6 @@ const ProjectSlider = ({
           ))}
         </motion.div>
       </div>
-
-      {/* Hint */}
-      <p
-        className="text-center text-xs mt-6 tracking-widest uppercase opacity-50"
-        style={{ color: 'hsl(var(--muted-foreground))' }}
-      >
-        Hover to pause · Use arrows to browse
-      </p>
     </div>
   );
 };
