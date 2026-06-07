@@ -26,6 +26,11 @@
   --testimonial-teal: 335 65% 52%;
   --testimonial-accent: 335 55% 72%;
   --gold-accent: 335 50% 68%;        /* light rose (replaces gold) */
+
+  /* Landing page nav tokens */
+  --nav-link: 267 19% 48%;           /* #766292  muted nav link */
+  --nav-link-active: 335 65% 52%;    /* rose-pink  active tab */
+  --nav-cta: 335 65% 52%;            /* rose-pink  underline / CTA */
 }
 
 .dark {
@@ -52,6 +57,10 @@
   --testimonial-teal: 335 68% 62%;
   --testimonial-accent: 335 60% 72%;
   --gold-accent: 335 55% 68%;
+
+  --nav-link: 0 0% 65%;
+  --nav-link-active: 335 68% 62%;
+  --nav-cta: 335 68% 62%;
 }
 
 * {
@@ -1929,12 +1938,6 @@ html {
   }
 }
 
-/* ─── Landing page nav tokens ─────────────────────────────────────────────── */
-
---nav-link: 267 19% 48%;         /* #766292  muted nav link */
---nav-link-active: 0 0% 95%;     /* near-white  active / hover */
---nav-cta: 272 82% 57%;          /* bright violet  CTA button  */
-
 /* ─── Navigation: boxed initials logo ─────────────────────────────────────── */
 
 .logo-initials-box {
@@ -1948,16 +1951,16 @@ html {
   gap: 1px;
   font-size: 0.8rem;
   font-weight: 700;
-  color: hsl(var(--foreground));
+  color: hsl(var(--accent-foreground));
   letter-spacing: 0.02em;
   cursor: pointer;
-  transition: border-color 0.2s ease, color 0.2s ease;
-  background: transparent;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+  background: hsl(var(--accent));
 }
 
 .logo-initials-box:hover {
-  border-color: hsl(var(--accent));
-  color: hsl(var(--accent));
+  background: hsl(var(--accent) / 0.9);
+  box-shadow: 0 4px 12px hsl(var(--accent) / 0.35);
 }
 
 .minimal-nav-link {

@@ -95,12 +95,6 @@ const WorkSection = () => {
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
             />
 
-            {/*
-             * SPINNER — full rotateY 0→360 (linear, continuous).
-             * transformStyle: preserve-3d lets front & back face be
-             * separate layers so the image never "mirrors" mid-spin.
-             * Float (y) rides on top of the spin independently.
-             */}
             <motion.div
               className="relative z-10 w-full"
               style={{ transformStyle: 'preserve-3d' }}
@@ -218,6 +212,35 @@ const WorkSection = () => {
             link="https://scrumdroid.com"
           />
 
+          {/* Bloowatch */}
+          <ProjectCard
+            delay={1.3}
+            isInView={isInView}
+            imgSrc="/p4.png"
+            imgAlt="Bloowatch Screenshot"
+            accentFrom="from-pink-500"
+            accentTo="to-purple-500"
+            title="Bloowatch"
+            subtitle="E-Commerce, Full Stack"
+            description="Developed a full-stack e-commerce application using React.js, Node.js, PostgreSQL, and modern web technologies. Built end-to-end shopping flows including product catalog browsing, cart management, and secure order placement with a focus on reliability and data integrity. Optimised application performance through caching strategies, efficient REST API design, and responsive UI patterns that adapt cleanly across devices. Emphasised scalability and maintainability throughout the stack to support growing product inventory and concurrent user traffic while delivering a smooth, friction-free shopping experience."
+            tags={['React.js', 'Node.js', 'PostgreSQL', 'REST APIs', 'Caching', 'E-Commerce']}
+          />
+
+          {/* BusConnect */}
+          <ProjectCard
+            delay={1.35}
+            isInView={isInView}
+            imgSrc="/p5.png"
+            imgAlt="BusConnect Screenshot"
+            imgFit="contain"
+            accentFrom="from-zinc-700"
+            accentTo="to-zinc-900"
+            title="BusConnect"
+            subtitle="Bus Booking, Full Stack"
+            description="Comprehensive bus ticket booking platform designed to manage routes, schedules, buses, and seat reservations in a seamless user experience. Built a full-stack system enabling users to search routes, view available schedules, select seats, and book tickets efficiently. Focused on clean UI design with an interactive theme, responsive layouts, and smooth navigation across all booking flows. Implemented robust backend handling for route management, scheduling, and booking operations to ensure accurate and real-time availability updates."
+            tags={['React.js', 'Node.js', 'PostgreSQL', 'REST APIs', 'Seat Booking', 'Real-time Updates']}
+          />
+
           {/* Young Pioneer Tours */}
           <ProjectCard
             delay={1.4}
@@ -239,76 +262,6 @@ const WorkSection = () => {
               'SSR',
               'SSG',
             ]}
-          />
-
-          {/* HRango */}
-          <ProjectCard
-            delay={1.6}
-            isInView={isInView}
-            imgSrc="/p4.jpeg"
-            imgAlt="HRango Screenshot"
-            accentFrom="from-violet-500"
-            accentTo="to-cyan-500"
-            title="HRango"
-            subtitle="HRMS, Employee Tracking, Live Activity Feed"
-            description="Enterprise-grade HRM platform managing the complete employee lifecycle — recruitment, onboarding, monitoring, and performance tracking. Features a SignalR-powered real-time activity feed and a dedicated WPF background application for screenshot and process monitoring."
-            tags={['React.js', 'Node.js', 'Express', 'MongoDB', 'SignalR']}
-          />
-
-          {/* BankMind.ai */}
-          <ProjectCard
-            delay={1.8}
-            isInView={isInView}
-            imgSrc="/p5.jpeg"
-            imgAlt="BankMind.ai Screenshot"
-            accentFrom="from-blue-500"
-            accentTo="to-cyan-500"
-            title="BankMind.ai"
-            subtitle="Loan Processing, Real-Time Workflow Automation"
-            description="US-based loan application platform streamlining the complete loan lifecycle. Built scalable REST APIs with clean architecture, RabbitMQ-driven async processing, background jobs for long-running workflows, and SignalR-powered real-time communication for live support and status updates."
-            tags={['React.js', 'Node.js', 'PostgreSQL', 'RabbitMQ', 'SignalR']}
-          />
-
-          {/* Salon Reservation */}
-          <ProjectCard
-            delay={2.0}
-            isInView={isInView}
-            imgSrc="/p6.jpeg"
-            imgAlt="Salon Reservation System Screenshot"
-            accentFrom="from-pink-500"
-            accentTo="to-purple-500"
-            title="Salon Reservation System"
-            subtitle="Appointment Booking, Schedule & Customer Management"
-            description="Modern salon booking platform simplifying appointment scheduling and customer management. Responsive service browsing and reservation flows for customers, plus admin controls for schedules, staff availability, and customer records. Powered by scalable REST APIs with clean architecture."
-            tags={['React.js', 'Node.js', 'Express', 'MySQL', 'Sequelize']}
-          />
-
-          {/* 10Marla */}
-          <ProjectCard
-            delay={2.2}
-            isInView={isInView}
-            imgSrc="/p7.jpeg"
-            imgAlt="10Marla Property Management Screenshot"
-            accentFrom="from-emerald-500"
-            accentTo="to-teal-500"
-            title="10Marla"
-            subtitle="Property Management, Listing Workflow Automation"
-            description="Full-stack property management platform supporting complete listing workflows from creation and management to browsing. Implemented JWT-based authentication with user tracking for secure, personalised experiences, with dedicated admin and user dashboards."
-            tags={['React.js', 'Node.js', 'MySQL', 'JWT Auth', 'REST APIs']}
-          />
-
-          {/* SorrowPlace */}
-          <ProjectCard
-            delay={2.4}
-            isInView={isInView}
-            imgSrc="/p8.png"
-            imgAlt="SorrowPlace Social Platform Screenshot"
-            accentFrom="from-purple-500"
-            accentTo="to-indigo-500"
-            title="SorrowPlace"
-            subtitle="Social Networking, Moments & Support Communities"
-            description="Full-stack social networking platform supporting end-to-end community workflows around emotional moments and post sharing. JWT-based authentication with secure user tracking, plus intuitive dashboards for profile management, content control, and interaction across support groups."
-            tags={['React.js', 'Node.js', 'PostgreSQL', 'JWT Auth', 'REST APIs']}
           />
 
           {/* AkredCenter + Tickato */}
@@ -343,6 +296,7 @@ interface ProjectCardProps {
   description: string;
   tags: string[];
   link?: string;
+  imgFit?: 'cover' | 'contain';
 }
 
 const ProjectCard = ({
@@ -357,6 +311,7 @@ const ProjectCard = ({
   description,
   tags,
   link,
+  imgFit = 'cover',
 }: ProjectCardProps) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
@@ -374,7 +329,9 @@ const ProjectCard = ({
       }}
     >
       <motion.div
-        className="w-full h-[200px] sm:h-[300px] shadow-2xl rounded-lg overflow-hidden"
+        className={`w-full shadow-2xl rounded-lg overflow-hidden ${
+          imgFit === 'contain' ? 'h-[240px] sm:h-[360px]' : 'h-[200px] sm:h-[300px]'
+        }`}
         animate={{
           boxShadow: [
             '0 15px 30px rgba(0,0,0,0.15)',
@@ -384,8 +341,16 @@ const ProjectCard = ({
         }}
         transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
       >
-        <div className="w-full h-full relative overflow-hidden">
-          <Image src={imgSrc} alt={imgAlt} fill className="object-cover" />
+        <div
+          className="w-full h-full relative overflow-hidden"
+          style={imgFit === 'contain' ? { backgroundColor: 'hsl(var(--muted))' } : undefined}
+        >
+          <Image
+            src={imgSrc}
+            alt={imgAlt}
+            fill
+            className={imgFit === 'contain' ? 'object-contain object-top' : 'object-cover'}
+          />
           <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/20 pointer-events-none" />
           <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${accentFrom} ${accentTo}`} />
           <div className={`absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r ${accentTo} ${accentFrom}`} />

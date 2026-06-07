@@ -63,6 +63,11 @@ const Navigation = () => {
               whileTap={{ scale: 0.96 }}
               onClick={() => handleNavClick('#home')}
               className="logo-initials-box"
+              style={{
+                background: 'hsl(var(--accent))',
+                color: 'hsl(var(--accent-foreground))',
+                borderColor: 'hsl(var(--accent))',
+              }}
               aria-label="Go to top"
             >
               <span>M</span>
@@ -105,35 +110,6 @@ const Navigation = () => {
                   </motion.div>
                 );
               })}
-            </div>
-
-            {/* Right: Sign in + CTA */}
-            <div className="hidden md:flex items-center gap-5">
-              <motion.a
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.42 }}
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm transition-colors duration-200 hover:opacity-80"
-                style={{ color: 'hsl(var(--nav-link-active))' }}
-              >
-                Sign in
-              </motion.a>
-
-              <motion.button
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.5 }}
-                whileHover={{ scale: 1.04 }}
-                whileTap={{ scale: 0.97 }}
-                onClick={() => handleNavClick('#contact')}
-                className="px-4 py-1.5 rounded-full text-sm font-medium text-white transition-opacity duration-200 hover:opacity-90"
-                style={{ background: 'hsl(var(--nav-cta))' }}
-              >
-                Start Free +
-              </motion.button>
             </div>
 
             {/* Mobile: hamburger */}
