@@ -51,7 +51,7 @@ const Navigation = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.55, ease: 'easeOut' }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? 'nav-glass' : ''
+          isScrolled || isOpen ? 'nav-glass' : ''
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
@@ -176,25 +176,6 @@ const Navigation = () => {
                     </motion.button>
                   ))}
 
-                  {/* Mobile CTA */}
-                  <div className="pt-3 px-2 flex flex-col gap-2">
-                    <a
-                      href="/resume.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm py-2.5 transition-opacity hover:opacity-80"
-                      style={{ color: 'hsl(var(--nav-link-active))' }}
-                    >
-                      Sign in
-                    </a>
-                    <button
-                      onClick={() => handleNavClick('#contact')}
-                      className="text-sm font-medium text-white text-center py-2 rounded-full transition-opacity hover:opacity-90"
-                      style={{ background: 'hsl(var(--nav-cta))' }}
-                    >
-                      Start Free +
-                    </button>
-                  </div>
                 </div>
               </motion.div>
             )}
