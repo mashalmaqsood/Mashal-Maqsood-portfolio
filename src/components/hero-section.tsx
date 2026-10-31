@@ -17,10 +17,13 @@ const PARTICLES = [
 ];
 
 /* ── Stats row ───────────────────────────────────────────────────────────── */
-const STATS = [
+const RESUME_HREF = '/Mashal_Maqsood_Full_Stack_Software_Engineer.pdf';
+
+const STATS: { value: string; label: string; href?: string }[] = [
   { value: '3+',   label: 'Yrs Exp.' },
-  { value: '10+',  label: 'Projects' },
+  { value: 'AI',   label: 'Integrations' },
   { value: 'MERN', label: 'Full Stack' },
+  { value: 'CV',   label: 'Resume ↓', href: RESUME_HREF },
 ];
 
 /* ── Social links ────────────────────────────────────────────────────────── */
@@ -145,19 +148,37 @@ const HeroSection = () => (
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="flex items-center gap-5 mt-7"
+            className="flex flex-wrap items-center gap-3 sm:gap-5 mt-7"
           >
-            {STATS.map((s, i) => (
-              <div key={s.label} className="flex items-center gap-5">
-                {i > 0 && (
-                  <div style={{ width: '1px', height: '28px', background: 'hsl(var(--border))', flexShrink: 0 }} />
-                )}
+            {STATS.map((s, i) => {
+              const content = (
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
                   <span className="hero-stat-value">{s.value}</span>
                   <span className="hero-stat-label">{s.label}</span>
                 </div>
-              </div>
-            ))}
+              );
+              return (
+                <div key={s.label} className="flex items-center gap-3 sm:gap-5">
+                  {i > 0 && (
+                    <div style={{ width: '1px', height: '28px', background: 'hsl(var(--border))', flexShrink: 0 }} />
+                  )}
+                  {s.href ? (
+                    <a
+                      href={s.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      download
+                      aria-label="Download resume (PDF)"
+                      className="transition-transform duration-200 hover:-translate-y-0.5"
+                    >
+                      {content}
+                    </a>
+                  ) : (
+                    content
+                  )}
+                </div>
+              );
+            })}
           </motion.div>
 
           {/* Social icon links — pink icons */}

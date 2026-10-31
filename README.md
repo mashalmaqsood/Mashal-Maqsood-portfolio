@@ -27,13 +27,10 @@ This portfolio highlights:
 
 ## Featured Projects
 
-- Hiredroid
-- ScrumDroid
-- HRango
-- BankMind.ai
-- Salon Reservation System
-- 10Marla
-- SorrowPlace
+- Vorpix AI
+- Conversion Bear
+- Young Pioneer Tours
+- EstheticMatch
 
 ## Getting Started
 
@@ -54,7 +51,7 @@ Open [http://localhost:3000](http://localhost:3000).
 ## Contact
 
 - Email: [mashal.maqsood112@gmail.com](mailto:mashal.maqsood112@gmail.com)
-- GitHub: [github.com/mashalmaqsood/mashalmaqsood](https://github.com/mashalmaqsood/mashalmaqsood)
+- GitHub: [github.com/mashalmaqsood](https://github.com/mashalmaqsood)
 
 ## Deployment
 

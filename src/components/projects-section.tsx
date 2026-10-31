@@ -27,6 +27,7 @@ interface Project {
   accentTo: string;
   title: string;
   subtitle: string;
+  company?: string;
   description: string;
   tags: string[];
   link?: string;
@@ -41,44 +42,24 @@ const PROJECTS: Project[] = [
     accentTo: 'to-fuchsia-500',
     title: 'Vorpix AI',
     subtitle: 'AI Video Creation, Social Publishing',
+    company: 'Techverx',
     description:
-      'AI-powered video platform that turns chat prompts into publish-ready social videos using real photographs—not synthetic AI imagery. Users describe a topic; the system researches via web search and image discovery, plans scenes and narration, and outputs professional short-form videos in under 10 minutes for TikTok, YouTube, and X. Built the frontend with React.js and RTK: chat-driven ideation, a browser-based timeline editor (scenes, voiceover, music, captions), and flows for auth, credits/subscriptions, and YouTube/TikTok publishing. Backend pipeline integrates Runway, MoviePy/OpenCV, Cartesia TTS, and AWS S3.',
-    tags: ['React.js', 'RTK', 'Runway', 'MoviePy', 'AWS S3', 'Stripe', 'OAuth'],
+      'AI-powered video generation platform where users turn structured scripts into fully rendered videos with narration, branding, and multi-platform publishing. Full-stack role: built FastAPI video processing APIs for AI script generation, content regeneration, and media processing via FFmpeg and MoviePy, and integrated them into the React frontend. Integrated OpenAI, Google Gemini, RunwayML, and Cartesia TTS, YouTube/X/TikTok publishing, and Stripe subscriptions, with AWS S3, ECS Fargate workers, and Docker.',
+    tags: ['React.js', 'FastAPI', 'Python', 'PostgreSQL', 'AWS S3', 'Docker', 'Stripe', 'OpenAI'],
     link: 'https://vorpix.ai/',
   },
   {
-    imgSrc: '/p2.png',
-    imgAlt: 'ScrumDroid Screenshot',
-    accentFrom: 'from-orange-500',
-    accentTo: 'to-red-500',
-    title: 'ScrumDroid',
-    subtitle: 'Attendance Management, UI/UX',
+    imgSrc: '/conversion-bear.png',
+    imgAlt: 'Conversion Bear Shopify App Suite',
+    accentFrom: 'from-amber-500',
+    accentTo: 'to-orange-500',
+    title: 'Conversion Bear',
+    subtitle: 'Shopify App Suite, Full Stack',
+    company: 'Algolix Technologies',
     description:
-      'Comprehensive organisational management platform for attendance. Designed and optimised UIs with React.js and SWR, ensuring seamless data handling and responsiveness. Resolved critical rendering issues and implemented performance optimisations including caching and Web Workers.',
-    tags: ['React.js', 'SWR', 'Web Workers', 'Caching', 'Performance'],
-    link: 'https://scrumdroid.com',
-  },
-  {
-    imgSrc: '/p4.png',
-    imgAlt: 'Bloowatch Screenshot',
-    accentFrom: 'from-pink-500',
-    accentTo: 'to-purple-500',
-    title: 'Bloowatch',
-    subtitle: 'E-Commerce, Full Stack',
-    description:
-      'Developed a full-stack e-commerce application using React.js, Node.js, PostgreSQL, and modern web technologies. Built end-to-end shopping flows including product catalog browsing, cart management, and secure order placement with a focus on reliability and data integrity. Optimised application performance through caching strategies, efficient REST API design, and responsive UI patterns that adapt cleanly across devices.',
-    tags: ['React.js', 'Node.js', 'PostgreSQL', 'REST APIs', 'Caching', 'E-Commerce'],
-  },
-  {
-    imgSrc: '/p5.png',
-    imgAlt: 'BusConnect Screenshot',
-    accentFrom: 'from-zinc-700',
-    accentTo: 'to-zinc-900',
-    title: 'BusConnect',
-    subtitle: 'Bus Booking, Full Stack',
-    description:
-      'Comprehensive bus ticket booking platform designed to manage routes, schedules, buses, and seat reservations in a seamless user experience. Built a full-stack system enabling users to search routes, view available schedules, select seats, and book tickets efficiently. Implemented robust backend handling for route management, scheduling, and booking operations to ensure accurate and real-time availability updates.',
-    tags: ['React.js', 'Node.js', 'PostgreSQL', 'REST APIs', 'Seat Booking', 'Real-time Updates'],
+      'Two Shopify apps built for store owners with no coding skills required: a product variants display app and a custom checkout panel, both fully integrated into the Shopify platform. Built and maintained full-stack features with Next.js and NestJS, developed GraphQL APIs between frontend and backend, managed the integration layer with the Shopify storefront and checkout flow, and used MongoDB for store data, product information, and user preferences.',
+    tags: ['Next.js', 'NestJS', 'GraphQL', 'MongoDB', 'Tailwind CSS', 'React', 'Node.js'],
+    link: 'https://apps.shopify.com/partners/conversion-bear',
     imgFit: 'contain',
   },
   {
@@ -88,20 +69,24 @@ const PROJECTS: Project[] = [
     accentTo: 'to-amber-500',
     title: 'Young Pioneer Tours',
     subtitle: 'Tour Booking, WordPress CMS, SEO',
+    company: 'Algolix Technologies',
     description:
       'Modern tour booking web application built with Next.js and Tailwind CSS for a seamless, mobile-first travel planning experience. Integrated with a WordPress backend via REST API to display tours, blog content, and destinations. Implemented cookie-based authentication, dynamic SEO metadata with generateMetadata, and SSR/SSG for performance and search visibility.',
     tags: ['Next.js', 'Tailwind CSS', 'REST API', 'JavaScript', 'SSR', 'SSG'],
+    link: 'https://www.youngpioneertours.com/',
   },
   {
-    imgSrc: '/p9.png',
-    imgAlt: 'AkredCenter and Tickato Platform Screenshot',
-    accentFrom: 'from-sky-500',
-    accentTo: 'to-blue-500',
-    title: 'AkredCenter + Tickato',
-    subtitle: 'Accreditation + Ticketing (Two Product Phases)',
+    imgSrc: '/p6.png',
+    imgAlt: 'EstheticMatch Screenshot',
+    accentFrom: 'from-yellow-600',
+    accentTo: 'to-amber-300',
+    title: 'EstheticMatch',
+    subtitle: 'Aesthetic Healthcare Marketplace',
+    company: 'Fiverr',
     description:
-      'Multi-phase full-stack platform: AkredCenter for secure accreditation workflow management (submission, approval, status tracking), and Tickato for scalable ticketing operations. Built with Next.js and Node.js to deliver a fast, intuitive dashboard experience with reliable backend workflows.',
-    tags: ['Next.js', 'Node.js', 'MongoDB', 'REST APIs', 'Dashboard'],
+      'Healthcare platform connecting patients with qualified aesthetic practitioners through smart matching, verified reviews, treatment comparison, and secure messaging. Built practitioner discovery with location-based search, verified doctor profiles, and appointment scheduling workflows. Responsive UI with React.js and Tailwind CSS, PostgreSQL for practitioners, treatments, reviews, and bookings, and AWS S3 with CloudFront CDN caching for fast, secure media delivery.',
+    tags: ['React.js', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'AWS'],
+    link: 'https://www.estheticmatch.com/en',
   },
 ];
 
@@ -206,7 +191,9 @@ const ProjectSlider = ({
     }
   };
 
-  const duplicated = [...projects, ...projects];
+  // Keep each half of the loop wider than the viewport even with few projects
+  const half = Array.from({ length: Math.max(1, Math.ceil(6 / projects.length)) }, () => projects).flat();
+  const duplicated = [...half, ...half];
 
   return (
     <div className="relative w-full">
@@ -290,6 +277,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
     accentTo,
     title,
     subtitle,
+    company,
     description,
     tags,
     link,
@@ -345,6 +333,11 @@ const ProjectCard = ({ project }: { project: Project }) => {
             <p className="text-xs font-mono truncate" style={accentText}>
               {subtitle}
             </p>
+            {company && (
+              <p className="text-xs truncate" style={mutedText}>
+                {company}
+              </p>
+            )}
           </div>
         </div>
 

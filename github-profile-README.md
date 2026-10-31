@@ -15,7 +15,7 @@
   <a href="https://www.linkedin.com/in/mashalmaqsood/">
     <img src="https://img.shields.io/badge/LINKEDIN-Mashal%20Maqsood-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
-  <a href="https://github.com/mashalmaqsood/mashalmaqsood">
+  <a href="https://github.com/mashalmaqsood">
     <img src="https://img.shields.io/badge/GITHUB-mashalmaqsood-181717?style=for-the-badge&logo=github&logoColor=white" />
   </a>
 </p>
@@ -31,7 +31,7 @@
 - Experience with **[Vorpix AI](https://vorpix.ai/)**, tour booking platforms, and enterprise web apps
 
 📫 **mashal.maqsood112@gmail.com**  
-💼 [LinkedIn](https://www.linkedin.com/in/mashalmaqsood/) · [GitHub](https://github.com/mashalmaqsood/mashalmaqsood)
+💼 [LinkedIn](https://www.linkedin.com/in/mashalmaqsood/) · [GitHub](https://github.com/mashalmaqsood)
 
 ---
 
@@ -105,14 +105,6 @@
 
 ---
 
-### 📋 [ScrumDroid](https://scrumdroid.com/)
-
-> Organisational attendance platform with responsive React UIs, SWR data fetching, caching, and Web Worker performance optimisations.
-
-`React.js` `SWR` `REST APIs` `Web Workers` `Performance`
-
----
-
 ## 🎓 Education
 
 **BS Software Engineering** — Kinnaird College For Women University, Lahore
@@ -124,7 +116,7 @@
 ## 📊 GitHub Activity
 
 <p align="center">
-  <a href="https://github.com/mashalmaqsood/mashalmaqsood">
+  <a href="https://github.com/mashalmaqsood">
     <img
       src="https://streak-stats.demolab.com?user=mashalmaqsood&theme=dark&background=0D1117&ring=d9467a&fire=d9467a&currStreakLabel=d9467a&sideLabels=ffffff&dates=ffffff&sideNums=ffffff"
       alt="GitHub Streak"
@@ -133,7 +125,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/mashalmaqsood/mashalmaqsood">
+  <a href="https://github.com/mashalmaqsood">
     <img
       src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=mashalmaqsood&theme=github_dark"
       alt="GitHub profile stats"
@@ -142,7 +134,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/mashalmaqsood/mashalmaqsood">
+  <a href="https://github.com/mashalmaqsood">
     <img
       src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=mashalmaqsood&theme=github_dark"
       alt="Top languages by repo"
